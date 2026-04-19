@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import re
 import json
 from datetime import datetime
-
+import time
 import pandas as pd
 
 from src.transform import transformar_dados
@@ -17,7 +17,8 @@ def obter_cotacoes():
 
     driver.get("https://www.cnabrasil.org.br/servicos/precos-commodities")
 
-
+    time.sleep(5)
+    
     tabela = WebDriverWait(driver, 50).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "div.commodities-table"))
     )
@@ -35,7 +36,6 @@ def obter_cotacoes():
         if len(dados) > 0:
             dados_brutos.append(dados)
 
-    print(dados_brutos)
     driver.quit()
 
     print(f"Dados brutos extraidos: {len(dados_brutos)} linhas")
