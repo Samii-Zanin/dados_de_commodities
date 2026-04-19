@@ -234,7 +234,6 @@ Melhorias técnicas que podem ser implementadas:
 
 - Logging estruturado
 - Tratamento robusto de exceções
-- Deduplicação de registros
 - Controle de integridade de dados
 - Criação de chave primária
 - Containerização com Docker
